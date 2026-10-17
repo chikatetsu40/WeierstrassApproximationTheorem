@@ -4,7 +4,7 @@ Overview:
   AI-assisted (Claude Sonnet 5.5, GPT-6) formalization of the Weierstrass Approximation Theorem on the unit interval in Lean 4, from scratch by bounding the
   difference between f and its associated Bernstein polynomials.
   
-  The theorem says that the polynomials are dense in C[0,1], or that any continuous function f can be approximated by a sequence of polynomials on [0,1].
+  The theorem says that the polynomials are dense in C[0,1], or that any continuous function f:[0,1]->R can be approximated by a sequence of polynomials on [0,1]. The result extends to any compact subset K of R.
 
 Requirements:
   Lean 4,
