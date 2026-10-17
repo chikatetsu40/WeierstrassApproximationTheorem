@@ -7,7 +7,7 @@ Overview:
   The result says that the polynomials are dense in C[0,1], or that any continuous function f can be approximated by a sequence of polynomials on [0,1].
 
 Requirements:
-  Lean 4
+  Lean 4,
   Mathlib
 
 Building:
