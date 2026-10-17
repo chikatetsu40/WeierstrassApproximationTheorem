@@ -1,1 +1,14 @@
-/.lake
+
+# Lean and Lake build artifacts
+.lake/
+*.olean
+*.ilean
+
+# Temporary editor files
+*.swp
+*.swo
+*~
+
+# Operating system files
+.DS_Store
+Thumbs.db
