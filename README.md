@@ -1,13 +1,15 @@
 # WeierstrassApproximationTheorem
 
-## GitHub configuration
+Overview:
+  AI-assisted (Claude Sonnet 5.5, GPT-6) formalization of the Weierstrass Approximation Theorem on the unit interval in Lean 4, from scratch by bounding of the
+  difference between f and its associated Bernstein polynomials.
+  
+  The result says that the polynomials are dense in C[0,1], or that any continuous function f can be approximated by a sequence of polynomials on [0,1].
 
-To set up your new GitHub repository, follow these steps:
+Requirements:
+  Lean 4
+  Mathlib
 
-* Under your repository name, click **Settings**.
-* In the **Actions** section of the sidebar, click "General".
-* Check the box **Allow GitHub Actions to create and approve pull requests**.
-* Click the **Pages** section of the settings sidebar.
-* In the **Source** dropdown menu, select "GitHub Actions".
-
-After following the steps above, you can remove this section from the README file.
+Building:
+  From the project directory, run:
+  lake build
