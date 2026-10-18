@@ -1,6 +1,6 @@
 # Real Analysis Formalizations
 
-This repository contains formalizations of important theorems in graduate real analysis done for practice. Below is a list of the included theorems.
+This repository contains formalizations of important theorems in graduate real analysis, done for practice. Below is a list of the included theorems.
 
 # Weierstrass Approximation Theorem
 Overview:
