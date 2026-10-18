@@ -5,11 +5,8 @@ on:
   pull_request:
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read # Read access to repository contents
-  pages: write # Write access to GitHub Pages
-  id-token: write # Write access to ID tokens
+  contents: write # needed to push to the gh-pages branch
 
 jobs:
   build:
@@ -18,4 +15,34 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: leanprover/lean-action@v1
-      - uses: leanprover-community/docgen-action@v1
+
+      - name: Build documentation
+        run: |
+          mkdir docbuild
+          cd docbuild
+          cat > lakefile.toml <<'EOF'
+          name = "docbuild"
+          reservoir = false
+          version = "0.1.0"
+          packagesDir = "../.lake/packages"
+
+          [[require]]
+          name = "WeierstrassApproximationTheorem"
+          path = "../"
+
+          [[require]]
+          name = "doc-gen4"
+          git = "https://github.com/leanprover/doc-gen4"
+          rev = "v4.36.0-rc1"
+          EOF
+          cp ../lean-toolchain .
+          MATHLIB_NO_CACHE_ON_UPDATE=1 lake update doc-gen4
+          lake build WeierstrassApproximationTheorem:docs
+          touch .lake/build/doc/.nojekyll
+
+      - name: Deploy to gh-pages branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docbuild/.lake/build/doc
+          branch: gh-pages
