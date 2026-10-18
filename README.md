@@ -1,5 +1,8 @@
-# WeierstrassApproximationTheorem
+# Real Analysis Formalizations
 
+This repository contains formalizations of important theorems in graduate real analysis done for practice. Below is a list of the included theorems.
+
+# Weierstrass Approximation Theorem
 Overview:
   AI-assisted (Claude Sonnet 5.5, GPT-6) formalization of the Weierstrass Approximation Theorem on the unit interval in Lean 4, from scratch by bounding the
   difference between f and its associated Bernstein polynomials.
