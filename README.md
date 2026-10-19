@@ -22,7 +22,7 @@ Overview:
   AI-assisted (Claude Sonnet 5.5, GPT-6) formalization of the Arzelà–Ascoli Theorem in Lean 4. The formalization is based on the proof found in https://www.math.ucdavis.edu/~hunter/book/ch2.pdf
   The proof shows precompactness is equivalent to boundedness and equicontinuity. 
   
-  The theorem says compactness of subsets in C(K) is equivalent to being closed, bounded, and equicontinuous.
+  The theorem says compactness of a subset in C(K) is equivalent to being closed, bounded, and equicontinuous.
 
 Requirements:
   Lean 4,
